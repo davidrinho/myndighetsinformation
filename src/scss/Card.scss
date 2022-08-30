@@ -1,0 +1,49 @@
+@use "base";
+
+
+.card {
+    display: flex;
+    background-color: #373F51;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #D8DBE2;
+
+    &:hover {
+        background-color: #808e9b;
+    }
+
+    span {
+        background-color: transparent;
+    }
+
+    &.big {
+        height: 300px;
+        width: 300px;
+    }
+
+    &.small {
+        height: 200px;
+        width: 200px;
+        font-size: 1rem;
+
+    }
+}
+
+
+@media screen and (max-width: 658px) {
+    .card {
+        &.big {
+            height: 200px;
+            width: 100%;
+        }
+
+        &.small {
+            height: 200px;
+            width: 100%;
+        }
+    }
+  }

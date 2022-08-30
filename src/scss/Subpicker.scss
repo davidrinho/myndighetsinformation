@@ -1,0 +1,49 @@
+
+
+.viewer {
+    display: none;
+    width: 80vw;
+    height: 100vh;
+    align-items: center;
+    margin: auto;
+    margin-top: 20vh;
+
+
+    &.active {
+        display: block;
+    }
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 2vw;
+    bottom: 2vh;
+    color: white;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding: 1rem;
+    
+
+    i {
+        background-color: transparent;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 2rem;
+
+        &:hover {
+            color: #808e9b;
+        }
+    }
+}
+
+@media screen and (max-width: 658px) {
+    .menuContainer {
+        display: none;
+    }
+
+    .viewer {
+        width: 100vw;
+    }
+}
