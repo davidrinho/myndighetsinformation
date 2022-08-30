@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.7bc1acef.css",
-    "main.js": "/static/js/main.bb21e58c.js",
-    "index.html": "/index.html",
-    "main.7bc1acef.css.map": "/static/css/main.7bc1acef.css.map",
-    "main.bb21e58c.js.map": "/static/js/main.bb21e58c.js.map"
+    "main.css": "/myndighetsinformation/static/css/main.7bc1acef.css",
+    "main.js": "/myndighetsinformation/static/js/main.bb21e58c.js",
+    "index.html": "/myndighetsinformation/index.html",
+    "main.7bc1acef.css.map": "/myndighetsinformation/static/css/main.7bc1acef.css.map",
+    "main.bb21e58c.js.map": "/myndighetsinformation/static/js/main.bb21e58c.js.map"
   },
   "entrypoints": [
     "static/css/main.7bc1acef.css",
