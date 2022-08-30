@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/myndighetsinformation" element={<Picker />}/>
-        <Route caseSensitive path="myndighetsinformation/myndighet/:myndighet" element={<Subpicker />}/>
+        <Route caseSensitive path="/myndighet/:myndighet" element={<Subpicker />}/>
       </Routes>
     </Router>
   );
