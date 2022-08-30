@@ -114,7 +114,7 @@ const Subpicker = () => {
     }
 
     const fetchJsonData = (url) => {
-
+        
     }
 
     const handleActionType = (obj) => {

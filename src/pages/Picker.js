@@ -24,7 +24,7 @@ const Picker = () => {
                             name={item}
                             size="big"
                             func={function(){
-                                navigate(`/myndighet/${item.toLowerCase()}`)
+                                navigate(`myndighetsinformation/myndighet/${item.toLowerCase()}`)
                             }}
                         /> 
                     )
