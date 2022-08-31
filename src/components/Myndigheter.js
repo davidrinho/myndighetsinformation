@@ -1,6 +1,6 @@
 
 
-const myndigheter = {
+const data = {
     "migrationsverket": {
         "Inkomna ansökningar om asyl": {
             "url": "https://www.migrationsverket.se/download/18.6b4387bd17dc72a9925b90/1659525901814/Inkomna%20ans%C3%B6kningar%20om%20asyl%202022.xlsx",
@@ -85,4 +85,4 @@ const myndigheter = {
 }
 
 
-export default myndigheter;
+export default data;
