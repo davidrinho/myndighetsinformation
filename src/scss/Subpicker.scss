@@ -9,7 +9,13 @@
     margin-top: 20vh;
 
 
-    &.active {
+    &.active-json {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+    }
+
+    &.active-excel {
         display: block;
     }
 }
@@ -35,6 +41,26 @@
         &:hover {
             color: #808e9b;
         }
+    }
+}
+
+.jsoncard {
+    margin: 2rem;
+    
+    div {
+
+        span {
+            margin: 1rem;
+            background-color: transparent;
+            color: white;
+        }
+
+        &:first-child {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ffc048;
+        }
+    
     }
 }
 

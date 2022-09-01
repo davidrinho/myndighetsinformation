@@ -3,7 +3,8 @@ import {useParams} from 'react-router-dom';
 import '../scss/Subpicker.scss';
 import Card from '../components/Card';
 import data from '../components/Myndigheter';
-import {capitalizeFirstLetter} from '../components/Utils';
+import JsonCard from '../components/JsonCard';
+import {capitalizeFirstLetter, getFeaturesFHM} from '../components/Utils';
 
 
 
@@ -13,9 +14,18 @@ const Subpicker = () => {
     const [available, setAvailable] = useState(false);
     const [books, setBooks] = useState([]);
     const [bookUrl, setBookUrl] = useState(null);
+    const [jsonArr, setJsonArr] = useState(null);
     const viewerUrl = "https://view.officeapps.live.com/op/embed.aspx?src=";
 
     let {myndighet} = useParams();
+
+    const setViewerActive = (type) => {
+        let viewer = document.querySelector(".viewer")
+        if (!viewer.classList.contains("active")) {
+            viewer.classList.toggle(`active-${type}`);
+            viewer.scrollIntoView(true);
+        }
+    }
 
     const fetchData = () => {
         myndighet = myndighet.toLowerCase();
@@ -27,13 +37,16 @@ const Subpicker = () => {
 
     const setIframeSrc = (url) => {
         setBookUrl(url);
-        let viewer = document.querySelector(".viewer")
-        viewer.classList.toggle("active");
-        viewer.scrollIntoView(true);
+        setViewerActive("excel");
     }
 
     const fetchJsonData = (url) => {
-        
+        fetch(url)
+            .then((response) => response.json())
+            .then((json) => {
+                setJsonArr(json.features);
+            })
+        setViewerActive("json");
     }
 
     const handleActionType = (obj) => {
@@ -91,6 +104,13 @@ const Subpicker = () => {
                         {bookUrl ?
                                 <iframe frameBorder="0" width={"100%"} height="90%" src={viewerUrl + bookUrl} />
                             : ""}
+                        {jsonArr ?
+                            jsonArr.map((item) => {
+                                return (
+                                    JsonCard(item.properties)
+                                )
+                            })
+                        : ""}
                     </div>
                 </div>
             : <h2>No bueno</h2>}

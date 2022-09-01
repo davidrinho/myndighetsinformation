@@ -2,11 +2,7 @@
   "name": "myndighetsinformation",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "homepage": "https://myndighetsstatistik.nu",
-=======
-  "homepage": "www.myndighetsstatistik.nu",
->>>>>>> 044df877b3a2ac80c01c7c7ff9c864dba09f7ce9
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
