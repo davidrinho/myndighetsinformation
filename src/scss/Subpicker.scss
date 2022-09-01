@@ -52,14 +52,27 @@
         span {
             margin: 1rem;
             background-color: transparent;
-            color: white;
+        }
+
+        &:nth-child(odd) {
+            background-color: #D8DBE2;
+            color: #373F51;
+        }
+
+        &:nth-child(even) {
+            background-color: #373F51;
+            color: #D8DBE2;
         }
 
         &:first-child {
+            color: #D8DBE2;
             font-size: 2rem;
             margin-bottom: 2rem;
             border-bottom: 1px solid #ffc048;
+            background-color: transparent;
         }
+
+        
     
     }
 }

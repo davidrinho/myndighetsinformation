@@ -21,7 +21,7 @@ const Subpicker = () => {
 
     const setViewerActive = (type) => {
         let viewer = document.querySelector(".viewer")
-        if (!viewer.classList.contains("active")) {
+        if (!(viewer.classList.contains("active-json") && !(viewer.classList.contains("active-excel")))) {
             viewer.classList.toggle(`active-${type}`);
             viewer.scrollIntoView(true);
         }
