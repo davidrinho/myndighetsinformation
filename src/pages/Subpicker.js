@@ -5,6 +5,7 @@ import Card from '../components/Card';
 import data from '../components/Myndigheter';
 import JsonCard from '../components/JsonCard';
 import {capitalizeFirstLetter, getFeaturesFHM} from '../components/Utils';
+import Home from '../components/Home';
 
 
 
@@ -21,7 +22,8 @@ const Subpicker = () => {
 
     const setViewerActive = (type) => {
         let viewer = document.querySelector(".viewer")
-        if (!(viewer.classList.contains("active-json") && !(viewer.classList.contains("active-excel")))) {
+
+        if (!(viewer.classList.contains("active-json")) && !(viewer.classList.contains("active-excel"))) {
             viewer.classList.toggle(`active-${type}`);
             viewer.scrollIntoView(true);
         }
@@ -68,6 +70,7 @@ const Subpicker = () => {
     }, []);
     return (
         <div>
+            <Home />
             {available ? 
                 <div>
                 <div className="pickerContainer">

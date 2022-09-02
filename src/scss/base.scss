@@ -35,6 +35,20 @@
 }
 
 
+.homeBtn {
+  position: absolute;
+  color: #D8DBE2;
+  left: 1em;
+  top: 1em;
+  font-size: 2rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #808e9b;
+  }
+}
+
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

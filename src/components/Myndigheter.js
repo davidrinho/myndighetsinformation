@@ -81,6 +81,24 @@ const data = {
             "type": "json"
         }
 
+    },
+    "skatteverket": {
+        "Beskattnings­­sammandrag för inkomstår 2018": {
+            "url": "https://skatteverket.entryscape.net/store/9/resource/977",
+            "type": "excel"
+        },
+        "Beskattnings­­sammandrag för inkomstår 2019": {
+            "url": "https://skatteverket.entryscape.net/store/9/resource/1218",
+            "type": "excel"
+        },
+        "Beskattnings-sammandrag för inkomstår 2020": {
+            "url": "https://skatteverket.entryscape.net/store/9/resource/1514",
+            "type": "excel"
+        },
+        "Beskattnings-sammandrag för inkomstår 2021": {
+            "url": "https://skatteverket.entryscape.net/store/9/resource/1696",
+            "type": "excel"
+        }
     }
 }
 

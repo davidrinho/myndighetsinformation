@@ -4,6 +4,7 @@ import '../scss/Picker.scss';
 import Card from '../components/Card';
 import data from '../components/Myndigheter';
 import {capitalizeFirstLetter} from '../components/Utils';
+import Home from '../components/Home';
 
 
 
@@ -19,6 +20,7 @@ const Picker = () => {
 
     return (
         <div>
+            <Home />
             {myndigheter ? 
                 <div className="pickerContainer">
                     <h1 className="pickerHeader">Välj en myndighet</h1>
