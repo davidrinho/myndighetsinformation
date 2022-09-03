@@ -5,7 +5,8 @@ import Card from '../components/Card';
 import data from '../components/Myndigheter';
 import JsonCard from '../components/JsonCard';
 import {capitalizeFirstLetter, getFeaturesFHM} from '../components/Utils';
-import Home from '../components/Home';
+import Menu from '../components/Menu';
+import SearchFilter from '../components/SearchFilter';
 
 
 
@@ -13,7 +14,8 @@ import Home from '../components/Home';
 const Subpicker = () => {
 
     const [available, setAvailable] = useState(false);
-    const [books, setBooks] = useState([]);
+    const [originalItems, setOriginalItems] = useState([]);
+    const [items, setItems] = useState(null);
     const [bookUrl, setBookUrl] = useState(null);
     const [jsonArr, setJsonArr] = useState(null);
     const viewerUrl = "https://view.officeapps.live.com/op/embed.aspx?src=";
@@ -33,7 +35,8 @@ const Subpicker = () => {
         myndighet = myndighet.toLowerCase();
         if (data[myndighet]) {
             setAvailable(true);
-            setBooks(Object.keys(data[myndighet]));
+            setOriginalItems(Object.keys(data[myndighet]));
+            setItems(Object.keys(data[myndighet]));
         }
     }
 
@@ -70,7 +73,7 @@ const Subpicker = () => {
     }, []);
     return (
         <div>
-            <Home />
+            <Menu />
             {available ? 
                 <div>
                 <div className="pickerContainer">
@@ -90,8 +93,12 @@ const Subpicker = () => {
                         
                     </div>
                     <h1 className="pickerHeader">{capitalizeFirstLetter(myndighet)}</h1>
+                    <SearchFilter
+                        originalData={originalItems}
+                        setDataFunc={setItems}
+                    />
                     <div className="contentContainer">
-                        {books.map((item, index) => {
+                        {items.map((item, index) => {
                             return (
                                 <Card
                                     key={index}

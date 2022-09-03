@@ -35,17 +35,68 @@
 }
 
 
-.homeBtn {
+.menu {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   color: #D8DBE2;
   left: 1em;
   top: 1em;
   font-size: 2rem;
   cursor: pointer;
+  text-align: center;
 
-  &:hover {
-    color: #808e9b;
+  #toggleBtn {
+    display: none;
   }
+
+  span {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+
+    margin: 5px;
+
+    &:hover {
+      color: #808e9b;
+    }
+  }
+}
+
+.search_container {
+
+  padding-bottom: 3rem;
+
+  input[type=text] {
+    border: none;
+    margin: 3rem 3rem 0 3rem;
+    border-bottom: 1px solid peachpuff;
+    background: transparent;
+    width: 35vw;
+    font-size: 1rem;
+    padding: 1rem;
+    outline: none;
+    color: white;
+    align-self: center;
+
+    &::placeholder {
+        color: white;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+      }
+      
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+      }
+}
 }
 
 
@@ -78,6 +129,37 @@
         }
     }
 
+    .menu {
+      font-size: 2rem;
+      * {
+        display: none;
+      }
+
+      #toggleBtn {
+        display: block;
+      }
+
+
+      &.active {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        justify-content: center;
+
+        #toggleBtn {
+          position: absolute;
+          top: 1em;
+          left: 1em;
+        }
+
+        * {
+          display: block;
+        }
+      }
+    }
+
   }
 
   @media screen and (max-width: 658px) {
@@ -95,5 +177,35 @@
         }
     }
 
+    .menu {
+      font-size: 1rem;
+      * {
+        display: none;
+      }
+
+      #toggleBtn {
+        display: block;
+      }
+
+
+      &.active {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        justify-content: center;
+
+        #toggleBtn {
+          position: absolute;
+          top: 1em;
+          left: 1em;
+        }
+
+        * {
+          display: block;
+        }
+      }
+    }
   }
   

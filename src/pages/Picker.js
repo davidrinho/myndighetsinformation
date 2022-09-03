@@ -4,26 +4,33 @@ import '../scss/Picker.scss';
 import Card from '../components/Card';
 import data from '../components/Myndigheter';
 import {capitalizeFirstLetter} from '../components/Utils';
-import Home from '../components/Home';
+import Menu from '../components/Menu';
+import SearchFilter from '../components/SearchFilter';
 
 
 
 
 const Picker = () => {
+    const [originalMyndigheter, setOriginalMyndigheter] = useState(null);
     const [myndigheter, setMyndigheter] = useState(null);
     let navigate = useNavigate();
 
     useEffect(() => {
+        setOriginalMyndigheter(Object.keys(data));
         setMyndigheter(Object.keys(data));
     }, []);
 
 
     return (
         <div>
-            <Home />
+            <Menu />
             {myndigheter ? 
                 <div className="pickerContainer">
                     <h1 className="pickerHeader">Välj en myndighet</h1>
+                    <SearchFilter
+                        originalData={originalMyndigheter}
+                        setDataFunc={setMyndigheter}
+                    />
                     <div className="contentContainer">
                         {myndigheter.map((item, index) => {
                             return (
