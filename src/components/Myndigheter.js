@@ -99,6 +99,12 @@ const data = {
             "url": "https://skatteverket.entryscape.net/store/9/resource/1696",
             "type": "excel"
         }
+    },
+    "sveriges kommuner och regioner": {
+        "Styren i kommuner 1994-": {
+            "url": "https://catalog.skl.se/rowstore/dataset/46552a39-4b37-4c21-91ca-059fda9952e1",
+            "type": "json"
+        }
     }
 }
 

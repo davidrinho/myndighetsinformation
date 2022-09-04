@@ -7,13 +7,32 @@ export const capitalizeFirstLetter = (string) => {
 }
 
 
-export const getFeaturesFHM = (json) => {
-    let objectArr = [];
+const parseFHM = (json) => {
+    let results = [];
     for (let i=0; i<json.features.length; i++) {
-        objectArr.push(json.features[i]);
+        results.push(json.features[i].properties)
+    };
+    return results;
+}
+
+const parseSKR = (json) => {
+    console.log(json);
+    const resultCount = json.resultCount;
+    let next = json.next;
+    return json.results;
+}
+
+
+export const jsonParser = (myndighet, json) => {
+    console.log(myndighet);
+    switch (myndighet) {
+        case "sveriges kommuner och regioner":
+            return parseSKR(json);
+        case "folkhälsomyndigheten":
+            return parseFHM(json);
+        default:
+            break;
     }
-    console.log(typeof(objectArr));
-    return objectArr;
 }
 
 export const sanitizeString = (string) => {

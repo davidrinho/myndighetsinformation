@@ -4,7 +4,7 @@ import '../scss/Subpicker.scss';
 import Card from '../components/Card';
 import data from '../components/Myndigheter';
 import JsonCard from '../components/JsonCard';
-import {capitalizeFirstLetter, getFeaturesFHM} from '../components/Utils';
+import {capitalizeFirstLetter, jsonParser} from '../components/Utils';
 import Menu from '../components/Menu';
 import SearchFilter from '../components/SearchFilter';
 
@@ -49,7 +49,9 @@ const Subpicker = () => {
         fetch(url)
             .then((response) => response.json())
             .then((json) => {
-                setJsonArr(json.features);
+                let parsedJson = jsonParser(myndighet, json);
+                console.log(parsedJson);
+                setJsonArr(parsedJson);
             })
         setViewerActive("json");
     }
@@ -117,7 +119,7 @@ const Subpicker = () => {
                         {jsonArr ?
                             jsonArr.map((item) => {
                                 return (
-                                    JsonCard(item.properties)
+                                    JsonCard(item)
                                 )
                             })
                         : ""}

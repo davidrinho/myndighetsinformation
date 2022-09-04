@@ -84,5 +84,11 @@
 
     .viewer {
         width: 100vw;
+
+        &.active-json {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            align-items: center;
+    }
     }
 }
