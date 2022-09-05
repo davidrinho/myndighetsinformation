@@ -104,6 +104,22 @@ const data = {
         "Styren i kommuner 1994-": {
             "url": "https://catalog.skl.se/rowstore/dataset/46552a39-4b37-4c21-91ca-059fda9952e1",
             "type": "json"
+        },
+        "Styren i regioner 1994-": {
+            "url": "https://catalog.skl.se/rowstore/dataset/088de648-dd7b-45cd-9a02-f0a6c7b88b5c",
+            "type": "json"
+        },
+        "Verksamhetsstatistik inom hälso- och sjukvård (yrke)": {
+            "url": "https://catalog.skl.se/store/1/resource/299",
+            "type": "excel"
+        },
+        "Verksamhetsstatistik inom hälso- och sjukvård (vårdplatser)": {
+            "url": "https://catalog.skl.se/store/1/resource/297",
+            "type": "excel"
+        },
+        "Verksamhetsstatistik inom hälso- och sjukvård (vårdcentraler)": {
+            "url": "https://catalog.skl.se/store/1/resource/295",
+            "type": "excel"
         }
     }
 }

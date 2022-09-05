@@ -22,15 +22,31 @@ const Subpicker = () => {
 
     let {myndighet} = useParams();
 
+    /**
+     * Sets the viewer element to be active and then displays the selected data according to the data type.
+     * @param {string} type - Supported data type (currently json/excel)     
+     */
     const setViewerActive = (type) => {
         let viewer = document.querySelector(".viewer")
+        // If viewer is active but not correct type
+        if (viewer.className.split("active-").length > 1) {
+            let currentType = viewer.className.split("active-").at(-1);
+            if (type !== currentType) {
+                viewer.classList.remove(`active-${currentType}`);
+                viewer.classList.add(`active-${type}`);
+            }
+        }
 
+        // if not viewer is active at all
         if (!(viewer.classList.contains("active-json")) && !(viewer.classList.contains("active-excel"))) {
             viewer.classList.toggle(`active-${type}`);
             viewer.scrollIntoView(true);
         }
     }
 
+    /**
+     * Collects data from stored JS object and sets the state variables
+     */
     const fetchData = () => {
         myndighet = myndighet.toLowerCase();
         if (data[myndighet]) {
@@ -40,12 +56,22 @@ const Subpicker = () => {
         }
     }
 
+    /**
+     * Sets the workbook URL to be used in iframe src 
+     * @param {string} url - Src url for .xlsx workbooks
+     */
     const setIframeSrc = (url) => {
+        if (jsonArr) setJsonArr(null);
         setBookUrl(url);
         setViewerActive("excel");
     }
 
+    /**
+     *  Fetches JSON data from given url and parse it with the help of util functions, then sets the appropriate state data
+     * @param {string} url - JSON data url to fetch from
+     */
     const fetchJsonData = (url) => {
+        if (bookUrl) setBookUrl(null);
         fetch(url)
             .then((response) => response.json())
             .then((json) => {
@@ -56,6 +82,10 @@ const Subpicker = () => {
         setViewerActive("json");
     }
 
+    /**
+     * Function dispatches to the appropriate function based on its type 
+     * @param {object} obj - Object collected based on 'myndighet' from the stored JS objects.
+     */
     const handleActionType = (obj) => {
         let {type, url} = obj;
         switch (type) {
@@ -73,6 +103,7 @@ const Subpicker = () => {
     useEffect(() => {
         fetchData();       
     }, []);
+    
     return (
         <div>
             <Menu />
