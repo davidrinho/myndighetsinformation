@@ -191,10 +191,10 @@ const data = {
             //     "url": "https://www.val.se/download/18.14c1f613181ed0043d54156/1662433573135/fortidsroster.csv",
             //     "type": "excel"
             // },
-            "Vallokaler": {
-                "url": "https://www.val.se/download/18.14c1f613181ed0043d54150/1662433862711/vallokaler.json",
-                "type": "json"
-            },
+            // "Vallokaler": {
+            //     "url": "https://www.val.se/download/18.14c1f613181ed0043d54150/1662433862711/vallokaler.json",
+            //     "type": "json"
+            // },
 
         }
     }
