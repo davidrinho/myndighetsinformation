@@ -51,8 +51,8 @@ const Subpicker = () => {
         myndighet = myndighet.toLowerCase();
         if (data[myndighet]) {
             setAvailable(true);
-            setOriginalItems(Object.keys(data[myndighet]));
-            setItems(Object.keys(data[myndighet]));
+            setOriginalItems(Object.keys(data[myndighet].data));
+            setItems(Object.keys(data[myndighet].data));
         }
     }
 
@@ -126,6 +126,9 @@ const Subpicker = () => {
                         
                     </div>
                     <h1 className="pickerHeader">{capitalizeFirstLetter(myndighet)}</h1>
+                    <div className="sourceContainer">
+                        <span id="sourceText">Statistik hämtad från </span><a target="_blank" href={data[myndighet].source}>{myndighet}</a>
+                    </div>
                     <SearchFilter
                         originalData={originalItems}
                         setDataFunc={setItems}
@@ -137,7 +140,7 @@ const Subpicker = () => {
                                     key={index}
                                     name={item}
                                     size="small"
-                                    func={() => handleActionType(data[myndighet][item])}
+                                    func={() => handleActionType(data[myndighet].data[item])}
                                 />
                             )
                         })}       

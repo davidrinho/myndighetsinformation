@@ -17,11 +17,26 @@
         display: flex;
         align-items: center;
         font-size: 4rem;
-        padding: 4rem;
+        padding-top: 4rem;
         color: #D8DBE2;
         flex: 1;
         justify-content: center;
     }
+
+    .sourceContainer {
+      color: lightgray;
+      font-style: italic;
+      padding-bottom: 2rem;
+      font-size: .8rem;
+
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: lightblue;
+
+      }
+    }
+
 
     .contentContainer {
         display: grid;
