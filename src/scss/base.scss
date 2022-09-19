@@ -73,13 +73,19 @@
     color: inherit;
     text-decoration: none;
   }
-
-  * {
-
-    margin: 5px;
+  i {
+    margin: 10px;
+    display: flex;
 
     &:hover {
       color: #808e9b;
+      span {
+        align-self: center;
+        margin-left: 1rem;
+        display: block;
+        font-size: 1rem;
+        animation: .5s showSpan forwards;
+      }
     }
   }
 }
@@ -147,7 +153,7 @@
 
     .menu {
       font-size: 2rem;
-      * {
+      i {
         display: none;
       }
 
@@ -195,7 +201,7 @@
 
     .menu {
       font-size: 1rem;
-      * {
+      i {
         display: none;
       }
 
@@ -225,3 +231,15 @@
     }
   }
   
+
+
+  // KEYFRAMES
+
+  @keyframes showSpan {
+    from {
+      transform: translateX(-5%);
+    }
+    to {
+      transform: translateX(5%);
+    }
+  }

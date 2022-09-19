@@ -30,6 +30,7 @@ const Menu = () => {
                 navigate("/")
             }}><span>Hem</span></i>
             <a target="_blank" href="https://github.com/davidrinho/myndighetsstatistik"><i className="fa-brands fa-github"><span>GitHub</span></i></a>
+            <a href="mailto:info@myndighetsstatistik.nu"><i className="fa-solid fa-at"><span>Mail</span></i></a>
         </div>
     )
 }
